@@ -23,6 +23,7 @@ class Solution:
         longest_distance = distance = 0
         i = 0
 
+        # TODO not solved!
         print(n_bytes)
 
         while i < len(n_bytes):
