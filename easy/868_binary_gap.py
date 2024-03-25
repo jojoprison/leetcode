@@ -20,29 +20,14 @@ class Solution:
         if n_bytes.count('1') < 2:
             return 0
 
-        longest_distance = distance = 0
-        i = 0
+        last = longest_distance = 0
 
-        # TODO not solved!
-        print(n_bytes)
-
-        while i < len(n_bytes):
-
-            if n_bytes[i] == '1':
-
-                if distance != 0:
-                    if distance > longest_distance:
-                        longest_distance = distance
-                    distance = 0
-                else:
-                    distance += 1
-            else:
-                distance += 1
-
-            i += 1
-
-        # print(distance)
-        # print(longest_distance)
+        for i, e in enumerate(n_bytes):
+            if e == '1':
+                distance = i - last
+                if distance > longest_distance:
+                    longest_distance = distance
+                last = i
 
         return longest_distance
 
@@ -51,13 +36,13 @@ if __name__ == '__main__':
 
     sol = Solution()
 
-    # s = sol.binaryGap(22)
-    # print(s)
-    # s = sol.binaryGap(8)
-    # print(s)
-    # s = sol.binaryGap(5)
-    # print(s)
-    # s = sol.binaryGap(3)
-    # print(s)
+    s = sol.binaryGap(22)
+    print(s)
+    s = sol.binaryGap(8)
+    print(s)
+    s = sol.binaryGap(5)
+    print(s)
+    s = sol.binaryGap(3)
+    print(s)
     s = sol.binaryGap(13)
     print(s)
